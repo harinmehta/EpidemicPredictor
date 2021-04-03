@@ -5,7 +5,7 @@ Predicts the next epidemic by analyzing twitter streams
 Predicts the next epidemic by analyzing twitter streams
 
 ## Start the service
-GET localhost:8080/start
+GET localhost:8080/start<br>
 RequestBody : 
 ```
 {
@@ -19,8 +19,8 @@ RequestBody :
 Response : No response (the service will keep on running in the background)
 
 ## Get Stats
-GET localhost:8080/analyse
-Request: no request required
+GET localhost:8080/analyse <br>
+Request: no request required <br>
 Response:
 ```
 {
@@ -32,7 +32,7 @@ Response:
 }
 ```
 ## Stop the service
-GET localhost:8080/stop
-Request: no request
-Response: no response 
+GET localhost:8080/stop <br>
+Request: no request <br>
+Response: no response
 
