@@ -8,7 +8,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -27,7 +27,7 @@ public class BaseController {
 	
 	private static Logger logger = LoggerFactory.getLogger(BaseController.class);
 	
-	@GetMapping("start")
+	@PostMapping("start")
 	public void fetchTweets(@RequestBody ObjectWrapper objectWrapper, BindingResult br) {
 		if(br.hasErrors()) {
 			logger.error("Binding Result caught errors.");
@@ -44,13 +44,13 @@ public class BaseController {
 															objectWrapper.getNorthEastLatitude())));
 		twitterService.run(terms, locations);
 	}
-	@GetMapping("/stop")
+	@PostMapping("/stop")
 	public void stop() {
 		logger.info("Stopping service");
 		twitterService.shutdown();
 	}
 	
-	@GetMapping("/analyse")
+	@PostMapping("/analyse")
 	public Map<Object, Object> analyse() {
 		Map<Object, Object> map = new HashMap<>();
 		map.put("Very Negative", twitterService.very_negative); 

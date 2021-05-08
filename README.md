@@ -1,9 +1,6 @@
 # EpidemicPredictor
 Predicts the next epidemic by analyzing twitter streams
 
-# EpidemicPredictor
-Predicts the next epidemic by analyzing twitter streams
-
 ## Start the service
 GET localhost:8080/start<br>
 RequestBody : 
