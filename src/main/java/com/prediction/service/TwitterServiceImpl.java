@@ -80,7 +80,7 @@ public class TwitterServiceImpl {
 				logger.info(msg);
 				String cleanMsg = extractCleanTweet(msg);
 				int sentiment = sentimentService.analyse(cleanMsg);
-				logger.info(">>>>>>>Cleaned :"+ cleanMsg +"\n>>>>>>>Sentiment :"+sentiment);
+				logger.info("\n>>>>>>>Cleaned :"+ cleanMsg +"\n>>>>>>>Sentiment :"+sentiment);
 				if(cleanMsg.length() > 4) {
 					switch(sentiment) {
 						case 0 : very_negative++;
